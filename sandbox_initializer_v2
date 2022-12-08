@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Bash script sets up new linux/UNIX environments
+# USAGE: ./path_to_file/sandbox_initializer {token} {github username} {github email}
+
+# Run update/upgrade
+sudo apt update -y
+sudo apt upgrade -y
+
+cd ~
+
+# Clone all git repos
+git clone https://$1@github.com/$2/holbertonschool-AirBnB_clone_v4.git
+# git clone https://$1@github.com/$2/Pointers_Live_Coding.git
+# git clone https://$1@github.com/$2/holbertonschool-higher_level_programming.git
+# git clone https://$1@github.com/$2/Misc.git
+# git clone https://$1@github.com/$2/holbertonschool-AirBnB_clone.git
+# git clone https://$1@github.com/$2/holbertonschool-system_engineering-devops.git
+# git clone https://$1@github.com/$2/holberton-system_engineering-devops.git
+# git clone https://$1@github.com/$2/holbertonschool-monty.git
+# git clone https://$1@github.com/$2/holbertonschool-low_level_programming.git
+# git clone https://$1@github.com/$2/holbertonschool-simple_shell.git
+# git clone https://$1@github.com/$2/shell_prep.git
+# git clone https://$1@github.com/$2/holbertonschool-printf.git
+# git clone https://$1@github.com/$2/holbertonschool-zero_day.git
+# git clone https://$1@github.com/$2/zero_day.git
+# git clone https://$1@github.com/$2/your_first_code.git
+
+# Set git values
+git config --global user.email "$3"
+git config --global user.name "$2"
+
+# Update bashrc
+rm ~/.bashrc
+cp ~/Misc/.bashrc .
+
+# CHANGE THE IP ADDRESSES BELOW TO THE IP ADDRESSES OF YOUR HOLBERTON WEB SERVERS
+echo "\n\n#Variables holding web server ip addresses:\n" > ~/.bashrc
+echo "web01=0.0.0.0" > ~/.bashrc
+echo "web02=0.0.0.0" > ~/.bashrc
+echo "lb01=0.0.0.0" > ~/.bashrc
+
+exec bash
