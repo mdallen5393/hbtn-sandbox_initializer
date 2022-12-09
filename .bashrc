@@ -107,3 +107,8 @@ function parse_git_branch {
     }
 PS1="${PS1}\$(parse_git_branch)# "
 export PS1
+
+# CHANGE THE IP ADDRESSES BELOW TO THE IP ADDRESSES OF YOUR HOLBERTON WEB SERVERS
+# web01=0.0.0.0      # Web Server 01
+# web02=0.0.0.0      # Web Server 02
+# lb01=0.0.0.0       # Load Balancer
