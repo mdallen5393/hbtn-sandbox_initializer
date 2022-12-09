@@ -35,8 +35,7 @@ cp ~/hbtn-sandbox_initializer/.bashrc ~
 
 # These three lines sets up your MySQL server with users & tables for the AirBnB projects
 sudo service mysql start
-echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';" | sudo mysql
+mysql -u root -proot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';"
 cat 100-hbnb.sql | mysql -uroot -proot
 
 exec bash
-
