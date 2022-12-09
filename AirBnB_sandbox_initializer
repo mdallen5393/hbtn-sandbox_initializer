@@ -33,9 +33,10 @@ git config --global user.name "$2"
 mv ~/.bashrc ~/.bashrc_backup
 cp ~/hbtn-sandbox_initializer/.bashrc ~
 
-exec bash
-
 # These three lines sets up your MySQL server with users & tables for the AirBnB projects
 sudo service mysql start
 echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';" | mysql -uroot -proot
 cat 100-dump.sql | mysql -uroot -proot
+
+exec bash
+
