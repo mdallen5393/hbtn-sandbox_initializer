@@ -35,7 +35,14 @@ git config --global user.name "$2"
 mv ~/.bashrc ~/.bashrc_backup
 cp ~/hbtn-sandbox_initializer/.bashrc ~
 
-# Install flask
-pip3 install flask
+# Install stuff
+sudo pip3 install flask
+sudo apt-get install -y python3-lxml
+sudo pip3 install flask_cors
+sudo pip3 install flasgger
+sudo pip3 install pathlib2
+sudo npm install semistandard --global
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 exec bash
